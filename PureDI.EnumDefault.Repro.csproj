@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PureDiVersion Condition="'$(PureDiVersion)' == ''">2.3.2</PureDiVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pure.DI" Version="$(PureDiVersion)">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Repro.Domain/Repro.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repro.Domain/**/*.cs" />
+  </ItemGroup>
+</Project>
